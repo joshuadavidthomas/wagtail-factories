@@ -44,7 +44,7 @@ class SimpleStructBlockNestedStream(blocks.StreamBlock):
 
 
 class PageWithSimpleStructBlockNested(Page):
-    body = StreamField(SimpleStructBlockNestedStream())
+    body = StreamField(SimpleStructBlockNestedStream(), use_json_field=True)
 
 
 class MyTestPage(Page):
@@ -56,7 +56,8 @@ class MyTestPage(Page):
             ("page", blocks.PageChooserBlock()),
             ("image", ImageChooserBlock()),
             ("document", DocumentChooserBlock()),
-        ]
+        ],
+        use_json_field=True,
     )
 
 
@@ -82,16 +83,16 @@ class DeeplyNestedStreamBlockInListBlock(blocks.StreamBlock):
 
 
 class PageWithStreamBlock(Page):
-    body = StreamField(MyStreamBlock())
+    body = StreamField(MyStreamBlock(), use_json_field=True)
 
 
 class PageWithNestedStreamBlock(Page):
-    body = StreamField(NestedStreamBlock())
+    body = StreamField(NestedStreamBlock(), use_json_field=True)
 
 
 class PageWithStreamBlockInStructBlock(Page):
-    body = StreamField(DeeplyNestedStreamBlock())
+    body = StreamField(DeeplyNestedStreamBlock(), use_json_field=True)
 
 
 class PageWithStreamBlockInListBlock(Page):
-    body = StreamField(DeeplyNestedStreamBlockInListBlock())
+    body = StreamField(DeeplyNestedStreamBlockInListBlock(), use_json_field=True)
