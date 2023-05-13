@@ -4,7 +4,7 @@ from setuptools import find_packages, setup
 
 install_requires = [
     "factory-boy>=3.2",
-    "wagtail>=2.15,<5.0",
+    "wagtail>=4.1",
 ]
 
 docs_require = [
@@ -16,7 +16,7 @@ tests_require = [
     "pytest-django==4.5.0",
     "pytest-cov==3.0.0",
     "pytest-pythonpath==0.7.3",
-    "psycopg2>=2.3.1",
+    "psycopg2-binary>=2.3.1",
     "coverage==6.0",
     "isort==5.10.0",
     "flake8==4.0.0",
